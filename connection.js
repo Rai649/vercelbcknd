@@ -27,7 +27,7 @@ if(err){
 }
 else{
     console.log("Connected to database")
-    // var sql="CREATE TABLE user (name VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), message VARCHAR(300))";  
+    // var sql="CREATE TABLE users (name VARCHAR(255), email VARCHAR(255), phone VARCHAR(255), message VARCHAR(300))";  
     //     con.query(sql,(err,result)=>{
     //         if(err){
     //             console.log("Error creating table")
@@ -48,7 +48,7 @@ app.get("/",(req,res)=>{
     
 app.post("/",(req,res)=>{
     const {name,email,phone,message}=req.body;
-    const sqlquery="INSERT INTO user(name,email,phone,message) VALUES(?,?,?,?)"
+    const sqlquery="INSERT INTO users(name,email,phone,message) VALUES(?,?,?,?)"
 
     con.query(sqlquery,[name,email,phone,message],(err,result)=>{
         if(err)
